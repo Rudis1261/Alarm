@@ -1,7 +1,6 @@
 <div id="main">
-  <i class="logo icon-vpn_key"></i>
-  <div class="container">
-
+  <i class="logo icon-vpn_key pull-left"></i>
+  <div class="user-details pull-right">
     <div *ngIf="afAuth.authState | async as user; else showLogin">
       <div class="profile">
         <img [src]="user.photoURL" [title]="user.displayName" />
@@ -9,10 +8,19 @@
         <button (click)="logout()"><i class="icon-logout"></i></button>
       </div>
     </div>
-
     <ng-template #showLogin>
       <div class="btn" (click)="showLoginModal = (showLoginModal) ? false: true">Login</div>
     </ng-template>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="container">
+    <div *ngIf="afAuth.authState | async as user">
+      <div class="btn" (click)="getToken()">Get token</div>
+      <label *ngIf="token">
+        <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
+      </label>
+    </div>
 
     <app-modal [(visible)]="showLoginModal" [(title)]="modalTitle">
       <app-login (onCloseModal)="onCloseModal()"></app-login>

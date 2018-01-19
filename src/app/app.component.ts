@@ -13,6 +13,7 @@ export class AppComponent {
   data: Observable<{}>;
   showLoginModal: Boolean = false;
   user: any;
+  token: String;
 
   constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.data = db.object('hello').valueChanges();
@@ -23,7 +24,9 @@ export class AppComponent {
 
   getToken() {
     if (!this.user) return false;
-    return this.user.getIdToken(true);
+    this.user.getIdToken(true).then(token => {
+      this.token = token;
+    });
   }
 
   logout() {
@@ -32,5 +35,12 @@ export class AppComponent {
 
   onCloseModal() {
     this.showLoginModal = false;
+  }
+
+  select(event) {
+    if (!event) return false;
+
+    event.target.focus();
+    event.target.select();
   }
 }
