@@ -14,7 +14,7 @@ footer {
   text-align: center;
   font-size: 12px;
   position: relative;
-  z-index: 1;
+  z-index: -1;
   border: 1px solid rgba($blue, 0.4);
   @include flex-display();
   @include align-content(center);
@@ -26,14 +26,15 @@ footer {
   max-width: $screenFullPage;
   margin: 0 auto 10px;
   padding: 0;
-  position: relative;
-  z-index: 2;
 
   i.logo {
     font-size: 130px;
     line-height: 120px;
-    color: #fff;
-    text-shadow: 0px 2px #8eb513, 1px 4px #bada55, 0px 4px 10px rgba(60, 60, 60, 0.23);
+    //color: #fff;
+    //text-shadow: 0px 2px #8eb513, 1px 4px #bada55, 0px 4px 10px rgba(60, 60, 60, 0.23);
+    color: #000;
+    //text-shadow: 0px 1px #00fff4, 0px 3px #007aff, 0px 6px 4px rgba(60, 60, 60, 0.23);
+    text-shadow: 1px 1px #00fff4, 2px 3px #007aff, 0px 6px 15px rgba(60, 60, 60, 0.23);
   }
 
   > .container {
