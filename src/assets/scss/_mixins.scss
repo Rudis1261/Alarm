@@ -341,6 +341,23 @@
   }
 }
 
+@mixin inline-flex-display($important: false){
+  @if ($important) {
+    display: -webkit-inline-box!important;
+    display: -moz-inline-box!important;
+    display: -ms-inline-flexbox!important;
+    display: -webkit-inline-flex!important;
+    display: inline-flex!important;
+  }
+  @else {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+}
+
 @mixin mobile {
   @include respond-to($screenTablet) {
     @content;
