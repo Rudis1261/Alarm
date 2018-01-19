@@ -1,0 +1,149 @@
+html {
+  background: #f1f1f1;
+}
+body {
+  min-height: 600px;
+}
+
+#main {
+  max-width: $screenFullPage;
+  margin: 0 auto;
+  padding: 0;
+
+  i.logo {
+    font-size: 130px;
+    color: #fff;
+    margin-bottom: 30px;
+    //text-shadow: 0px 2px #1a1919, 1px 7px #005dc7, 0px 9px 10px rgba(60, 60, 60, 0.35);
+    text-shadow: 0px 2px #8eb513, 1px 4px #bada55, 0px 4px 10px rgba(60, 60, 60, 0.23);
+  }
+
+  > .container {
+    background: #fff;
+    box-shadow: 0 0 1px #a7a7a7, 1px 1px 3px #bada55, 1px 3px 42px rgba(204, 204, 204, 0.16);
+    padding: 20px;
+    @include border-radius(4px);
+  }
+}
+
+@include respond-to($screenFullPage + 60px) {
+  #main {
+    margin: 0 15px 20px;
+  }
+}
+
+.row.loading-heading {
+    line-height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.block {
+    margin: 0 auto;
+    display: block;
+}
+
+a.small {
+    font-size: $font-sm;
+}
+
+.message {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+
+  &.success {
+    background: $badass;
+    color: #fff;
+    font-size: 16px;
+    line-height: 18px;
+    border: none;
+  }
+
+  &.error {
+    background: rgba(#ea0000, 0.02);
+    padding: 10px;
+    border-radius: 0;
+    border-color: #ea0000;
+    color: darken(#ea0000, 2%);
+  }
+
+  .icon-spin {
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+  }
+
+  small {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+
+.container.page-heading {
+    margin-top: 25px;
+    & > h1,
+    & > h2,
+    & > h3 {
+        line-height: 38px;
+        border-bottom: 1px solid #fff;
+        box-shadow: 0 5px 14px -9px rgba(136, 136, 136, 0.7);
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5 {
+            font-size: 14px;
+            color: #8e8e8e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: -5px   6px 2px;
+            font-weight: normal;
+        }
+    }
+
+    &-alt{
+        display: block;
+        width: 100%;
+        height: 10px;
+        margin: 20px 0;
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            display: block;
+            content: "";
+            border-bottom: 1px solid #b9b9b9;
+            box-shadow: 0 3px 10px 0px rgba(204, 204, 204, 0.7);
+        }
+    }
+
+    &-gutter {
+      display: block;
+      min-height: 40px;
+    }
+}
+
+.lazy-link {
+    width: 100%;
+}
+
+label > input,
+label > select,
+label > textarea,
+label > button {
+  margin-left: 0;
+}
+
+label > textarea {
+  max-width: none;
+}
+
+.clear,
+.clearfix {
+    @include clearfix();
+}

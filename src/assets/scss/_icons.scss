@@ -1,0 +1,224 @@
+$icomoon-font-path: "assets/scss/fonts" !default;
+$icomoon-font-hash: '1k0l4h';
+
+$icon-key: "\e91c";
+$icon-send: "\e90a";
+$icon-mail: "\e90b";
+$icon-check-outline: "\e90c";
+$icon-check-circle: "\e90d";
+$icon-vpn_key: "\e900";
+$icon-shield2: "\e91f";
+$icon-arrow-up: "\e906";
+$icon-arrow-right: "\e907";
+$icon-arrow-left: "\e908";
+$icon-arrow-down: "\e909";
+$icon-close: "\e914";
+$icon-search: "\e91a";
+$icon-filter: "\e91b";
+$icon-toggle-on: "\e915";
+$icon-toggle-off: "\e916";
+$icon-shield: "\e91e";
+$icon-loading: "\e913";
+$icon-alert: "\e919";
+$icon-check: "\e90e";
+$icon-remove: "\e905";
+$icon-remove-circle: "\e903";
+$icon-trash: "\e904";
+$icon-spinner: "\e902";
+$icon-logout: "\e901";
+$icon-triangle-up: "\e90f";
+$icon-triangle-right: "\e910";
+$icon-triangle-left: "\e911";
+$icon-triangle-down: "\e912";
+$icon-notification: "\e917";
+$icon-warning: "\e918";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?#{$icomoon-font-hash}');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?#{$icomoon-font-hash}#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?#{$icomoon-font-hash}') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?#{$icomoon-font-hash}') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?#{$icomoon-font-hash}#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-spin {
+  display: inline-block;
+  @include animation(spinner 1s infinite linear);
+}
+
+
+
+
+.icon-key {
+  &:before {
+    content: $icon-key;
+  }
+}
+.icon-send {
+  &:before {
+    content: $icon-send;
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail;
+  }
+}
+.icon-check-outline {
+  &:before {
+    content: $icon-check-outline;
+  }
+}
+.icon-check-circle {
+  &:before {
+    content: $icon-check-circle;
+  }
+}
+.icon-vpn_key {
+  &:before {
+    content: $icon-vpn_key;
+  }
+}
+.icon-shield2 {
+  &:before {
+    content: $icon-shield2;
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up;
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
+.icon-toggle-on {
+  &:before {
+    content: $icon-toggle-on;
+  }
+}
+.icon-toggle-off {
+  &:before {
+    content: $icon-toggle-off;
+  }
+}
+.icon-shield {
+  &:before {
+    content: $icon-shield;
+  }
+}
+.icon-loading {
+  &:before {
+    content: $icon-loading;
+  }
+}
+.icon-alert {
+  &:before {
+    content: $icon-alert;
+  }
+}
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
+}
+.icon-remove {
+  &:before {
+    content: $icon-remove;
+  }
+}
+.icon-remove-circle {
+  &:before {
+    content: $icon-remove-circle;
+  }
+}
+.icon-trash {
+  &:before {
+    content: $icon-trash;
+  }
+}
+.icon-spinner {
+  &:before {
+    content: $icon-spinner;
+  }
+}
+.icon-logout {
+  &:before {
+    content: $icon-logout;
+  }
+}
+.icon-triangle-up {
+  &:before {
+    content: $icon-triangle-up;
+  }
+}
+.icon-triangle-right {
+  &:before {
+    content: $icon-triangle-right;
+  }
+}
+.icon-triangle-left {
+  &:before {
+    content: $icon-triangle-left;
+  }
+}
+.icon-triangle-down {
+  &:before {
+    content: $icon-triangle-down;
+  }
+}
+.icon-notification {
+  &:before {
+    content: $icon-notification;
+  }
+}
+.icon-warning {
+  &:before {
+    content: $icon-warning;
+  }
+}
