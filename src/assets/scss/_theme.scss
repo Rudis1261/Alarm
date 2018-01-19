@@ -5,10 +5,29 @@ body {
   min-height: 600px;
 }
 
+footer {
+  margin: -10px auto 0;
+  background: rgba(#fff, 0.25);
+  height: 40px;
+  padding: 0 15px;
+  max-width: $screenFullPage - 40px;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba($blue, 0.4);
+  @include flex-display();
+  @include align-content(center);
+  @include align-items(center);
+  @include border-radius(0 0 6px 6px);
+}
+
 #main {
   max-width: $screenFullPage;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   padding: 0;
+  position: relative;
+  z-index: 2;
 
   i.logo {
     font-size: 130px;
@@ -28,6 +47,10 @@ body {
 @include respond-to($screenFullPage + 60px) {
   #main {
     margin: 0 15px 20px;
+  }
+
+  footer {
+    margin: -20px 30px 100px;
   }
 }
 

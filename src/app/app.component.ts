@@ -14,6 +14,7 @@ export class AppComponent {
   showLoginModal: Boolean = false;
   user: any;
   token: String;
+  author: String = 'Rudi Strydom <iam@thatguy.co.za>';
 
   constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.data = db.object('hello').valueChanges();

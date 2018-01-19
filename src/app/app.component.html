@@ -15,15 +15,22 @@
   <div class="clearfix"></div>
 
   <div class="container">
-    <div *ngIf="afAuth.authState | async as user">
+    <div *ngIf="afAuth.authState | async as user; else showWelcome">
       <div class="btn" (click)="getToken()">Get token</div>
       <label *ngIf="token">
         <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
       </label>
     </div>
 
+    <ng-template #showWelcome>
+      <h2>Oh hi there....</h2>
+      <p>This is awkward, but this isn't something for everyone sadly..</p>
+    </ng-template>
+
     <app-modal [(visible)]="showLoginModal" [(title)]="modalTitle">
       <app-login (onCloseModal)="onCloseModal()"></app-login>
     </app-modal>
   </div>
 </div>
+
+<footer>Alarm system by {{author}}</footer>
