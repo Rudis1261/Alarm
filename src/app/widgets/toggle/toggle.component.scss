@@ -1,0 +1,30 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/settings";
+
+:host {
+  display: inline-block;
+  text-align: center;
+  min-width: 60px;
+  padding: 0 0 10px;
+
+  .title {
+    font-size: 12px;
+  }
+
+  .icon {
+    &-toggle-on,
+    &-toggle-off {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    &-toggle-on {
+      color: $primary;
+      text-shadow: 0 0 1px rgba(#000, 0.8), 1px 1px 4px rgb(192, 255, 0);
+    }
+
+    &-toggle-off {
+      color: #ddd;
+    }
+  }
+}

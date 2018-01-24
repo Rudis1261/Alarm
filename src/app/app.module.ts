@@ -17,13 +17,15 @@ import { ModalComponent } from './widgets/modal/modal.component';
 // Env
 import { environment } from '../environments/environment';
 import { LoginComponent } from './widgets/login/login.component';
+import { ToggleComponent } from './widgets/toggle/toggle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ModalComponent,
-    LoginComponent
+    LoginComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,

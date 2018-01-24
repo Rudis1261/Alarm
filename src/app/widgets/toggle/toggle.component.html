@@ -1,0 +1,9 @@
+<div class="toggle" (click)="toggle()">
+  <div class="title">
+    <ng-content></ng-content>
+  </div>
+  <div class="icon">
+    <i class="icon-toggle-on" *ngIf="isEnabled"></i>
+    <i class="icon-toggle-off" *ngIf="!isEnabled"></i>
+  </div>
+</div>

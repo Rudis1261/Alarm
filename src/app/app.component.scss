@@ -1,4 +1,6 @@
+@import "../assets/scss/settings";
 @import "../assets/scss/mixins";
+
 :host {
   .user-details {
     height: 140px;
@@ -61,6 +63,24 @@
 
     &:hover > button {
       display: block;
+    }
+  }
+
+  @include mobile {
+    .user-details {
+      height: 110px;
+    }
+
+    .profile > button {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 24px;
+      top: 3px;
+      right: 3px;
+      box-shadow: -3px 3px 1px rgba(0, 0, 0, 0.15), 1px 1px 15px rgba(0,0,0,0.15);
+      @include transform(none);
+      @include border-radius(0 0 0 50%);
     }
   }
 }

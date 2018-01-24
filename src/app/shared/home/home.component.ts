@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  schedule: Object;
+  schedule_sub: any;
+  schedule_keys: Array<String>;
 
-  ngOnInit() {
+  constructor(public db: AngularFireDatabase) {
+    this.schedule_sub = db.object('schedule').valueChanges().subscribe(schedule => {
+      this.schedule = schedule;
+      this.schedule_keys = Object.keys(schedule);
+    });
   }
 
+  toggle(event) {
+    if (!event) return false;
+    let reference = ['schedule', event.index].join('/');
+    this.db.object(reference).set(event.state);
+  }
+
+  getTimeRangeFromIndex(index) {
+    return index + "-" + (Number(index) + 1);
+  }
+
+  ngOnInit() {}
+
+  ngOnDestroy() {
+    if (this.schedule_sub) this.schedule_sub.unsubscribe();
+  }
 }
