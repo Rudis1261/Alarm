@@ -1,0 +1,67 @@
+@import "../../../assets/scss/settings";
+@import "../../../assets/scss/mixins";
+
+
+:host {
+  .inner {
+    padding: 20px 10px 10px;
+    background: darken(#fff, 3%);
+    margin: 10px -20px;
+    border-top: 1px solid darken(#fff, 15%);
+    border-bottom: 1px solid darken(#fff, 15%);
+
+    > h4 {
+      padding-left: 18px;
+      margin-bottom: 15px;
+
+      .icon-alert {
+        position: relative;
+        top: 3px;
+        color: $error;
+      }
+    }
+
+    > div,
+    > span {
+      margin-left: 15px;
+      color: #555;
+    }
+
+    .events {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      box-shadow: 1px 1px 8px rgba(#ccc, 0.3);
+      @include flex-wrap(wrap);
+      @include flex-display();
+
+      .event {
+        width: 100%;
+        padding: 10px 8px;
+        border-bottom: 1px solid #ccc;
+        padding-right: 100px;
+        position: relative;
+        @include flex(0 0 100%);
+        @include flex-display();
+        @include align-items(center);
+        @include align-content(center);
+
+        .btn {
+          position: absolute;
+          right: 5px;
+        }
+
+        &:nth-of-type(odd) {
+          background: #ececec;
+        }
+
+        &:nth-of-type(even) {
+          background: darken(#fff, 1%);
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@ export class AppComponent {
   showLoginModal: Boolean = false;
   user: any;
   token: String;
+  section: String = 'main';
   author: String = 'Rudi Strydom <iam@thatguy.co.za>';
 
   constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) {
@@ -28,6 +29,10 @@ export class AppComponent {
     this.user.getIdToken(true).then(token => {
       this.token = token;
     });
+  }
+
+  setSection(section) {
+    this.section = section;
   }
 
   logout() {

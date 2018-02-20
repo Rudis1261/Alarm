@@ -1,0 +1,42 @@
+:host {
+  .schedule {
+    padding: 20px 10px 10px;
+    background: darken(#fff, 3%);
+    margin: 10px -20px;
+    border-top: 1px solid darken(#fff, 15%);
+    border-bottom: 1px solid darken(#fff, 15%);
+
+    > h4 {
+      padding-left: 18px;
+      margin-bottom: 15px;
+
+      &.health {
+        line-height: 45px;
+        height: 40px;
+        margin-bottom: 0;
+      }
+    }
+
+    .inner {
+      max-width: 725px;
+
+      &.health {
+        position: relative;
+        padding-top: 10px;
+        padding-left: 18px;
+        margin-bottom: 20px;
+
+        select {
+          width: 150px;
+          position: absolute;
+          top: -40px;
+          right: 0;
+        }
+      }
+
+      #chart_div {
+        box-shadow: 1px 1px 5px rgba(#000, 0.08);
+      }
+    }
+  }
+}

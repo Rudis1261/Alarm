@@ -3,6 +3,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 
+declare var moment: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

@@ -18,6 +18,8 @@ import { ModalComponent } from './widgets/modal/modal.component';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './widgets/login/login.component';
 import { ToggleComponent } from './widgets/toggle/toggle.component';
+import { EventsComponent } from './shared/events/events.component';
+import { StatsComponent } from './shared/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ToggleComponent } from './widgets/toggle/toggle.component';
     HomeComponent,
     ModalComponent,
     LoginComponent,
-    ToggleComponent
+    ToggleComponent,
+    EventsComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

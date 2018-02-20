@@ -16,13 +16,32 @@
 
   <div class="container">
     <div *ngIf="afAuth.authState | async as user; else showWelcome">
-      <div class="btn" (click)="getToken()">Get token</div>
-      <label *ngIf="token">
-        <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
-      </label>
-      <br />
-      <br />
-      <app-home></app-home>
+
+      <div class="btn" (click)="setSection('main')">Home</div>
+      <div class="btn" (click)="setSection('stats')">Stats</div>
+      <div class="btn" (click)="setSection('token')">Token</div>
+
+      <!-- Main Section -->
+      <div *ngIf="section && section == 'main'">
+        <app-events></app-events>
+        <br>
+        <app-home></app-home>
+      </div>
+
+      <!-- Token Section -->
+      <div *ngIf="section && section == 'token'">
+        <br />
+        <br />
+        <div class="btn" (click)="getToken()">Get token</div>
+        <label *ngIf="token">
+          <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
+        </label>
+      </div>
+
+      <!-- Stats Section -->
+      <div *ngIf="section && section == 'stats'">
+        <app-stats></app-stats>
+      </div>
     </div>
 
     <ng-template #showWelcome>
@@ -30,7 +49,7 @@
       <p>This is awkward, but this isn't something for everyone sadly..</p>
     </ng-template>
 
-    <app-modal [(visible)]="showLoginModal" [(title)]="modalTitle">
+    <app-modal [(visible)]="showLoginModal" title="Login">
       <app-login (onCloseModal)="onCloseModal()"></app-login>
     </app-modal>
   </div>
