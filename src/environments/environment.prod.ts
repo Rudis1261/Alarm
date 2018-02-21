@@ -7,5 +7,9 @@ export const environment = {
     projectId: "alarm-46e17",
     storageBucket: "alarm-46e17.appspot.com",
     messagingSenderId: "838537501020"
+  },
+  api: 'https://alarm-api.thatguy.co.za',
+  end_point: {
+    'notification': 'event' ///event/type=alarm&title=Alarm Triggered&message=The alarm has been set off!!!&notification=true
   }
 };

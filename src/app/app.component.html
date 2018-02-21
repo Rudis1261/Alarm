@@ -20,6 +20,7 @@
       <div class="btn" (click)="setSection('main')">Home</div>
       <div class="btn" (click)="setSection('stats')">Stats</div>
       <div class="btn" (click)="setSection('token')">Token</div>
+      <div class="btn btn-danger pull-right" (click)="testNotification()">Test <i class="icon-alert"></i></div>
 
       <!-- Main Section -->
       <div *ngIf="section && section == 'main'">

@@ -12,5 +12,9 @@ export const environment = {
     projectId: "alarm-46e17",
     storageBucket: "alarm-46e17.appspot.com",
     messagingSenderId: "838537501020"
+  },
+  api: 'http://devalarm-api.thatguy.co.za',
+  end_point: {
+    'notification': 'event'
   }
 };
