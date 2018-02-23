@@ -33,6 +33,7 @@ import { LoginComponent } from './widgets/login/login.component';
 import { ToggleComponent } from './widgets/toggle/toggle.component';
 import { EventsComponent } from './shared/events/events.component';
 import { StatsComponent } from './shared/stats/stats.component';
+import { ZonesComponent } from './shared/zones/zones.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { StatsComponent } from './shared/stats/stats.component';
     LoginComponent,
     ToggleComponent,
     EventsComponent,
-    StatsComponent
+    StatsComponent,
+    ZonesComponent
   ],
   imports: [
     BrowserModule,

@@ -65,7 +65,7 @@ export class AppComponent {
   }
 
   testNotification() {
-    this.api.get('notification', 'type=alarm&title=Test message&message=This is a test notification&notification=true').subscribe(data => {
+    this.api.get('notification', 'type=alarm&device=rudi-iphone&title=Test message&message=This is a test notification&notification=true').subscribe(data => {
       console.log("resp", data);
       alert("Notification sent");
     }, err => {
