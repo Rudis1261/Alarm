@@ -45,13 +45,6 @@ export class AppComponent {
     });
   }
 
-  getToken() {
-    if (!this.user) return false;
-    this.user.getIdToken(true).then(token => {
-      this.token = token;
-    });
-  }
-
   setSection(section) {
     this.section = section;
   }
@@ -62,16 +55,6 @@ export class AppComponent {
 
   onCloseModal() {
     this.showLoginModal = false;
-  }
-
-  testNotification() {
-    this.api.get('notification', 'type=alarm&device=rudi-iphone&title=Test message&message=This is a test notification&notification=true').subscribe(data => {
-      console.log("resp", data);
-      alert("Notification sent");
-    }, err => {
-      console.error(err);
-      alert(err.status + ": " + err.statusText);
-    })
   }
 
   select(event) {

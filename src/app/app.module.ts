@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { AppRoutingModule } from './app.routing';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 
 // Services
 import { ApiService } from './services/api.service';
+import { AuthGuardService } from './services/authguard.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -34,6 +35,11 @@ import { ToggleComponent } from './widgets/toggle/toggle.component';
 import { EventsComponent } from './shared/events/events.component';
 import { StatsComponent } from './shared/stats/stats.component';
 import { ZonesComponent } from './shared/zones/zones.component';
+import { ZoneComponent } from './widgets/zone/zone.component';
+import { Error404Component } from './http/error404/error404.component';
+import { ScheduleComponent } from './shared/schedule/schedule.component';
+import { NavBarComponent } from './widgets/nav-bar/nav-bar.component';
+import { ToolsComponent } from './shared/tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,12 @@ import { ZonesComponent } from './shared/zones/zones.component';
     ToggleComponent,
     EventsComponent,
     StatsComponent,
-    ZonesComponent
+    ZonesComponent,
+    ZoneComponent,
+    Error404Component,
+    ScheduleComponent,
+    NavBarComponent,
+    ToolsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,10 +65,12 @@ import { ZonesComponent } from './shared/zones/zones.component';
     //AngularFireDatabase,
     //AngularFirestoreModule,
     AngularFireAuthModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     ApiService,
+    AuthGuardService,
     AngularFireDatabase,
     {
       provide: AuthHttp,

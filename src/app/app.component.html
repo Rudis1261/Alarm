@@ -16,39 +16,8 @@
 
   <div class="container">
     <div *ngIf="afAuth.authState | async as user; else showWelcome">
-
-      <div class="btn" (click)="setSection('main')">Home</div>
-      <div class="btn" (click)="setSection('zone')">Zones</div>
-      <div class="btn" (click)="setSection('stats')">Stats</div>
-      <div class="btn" (click)="setSection('tools')">Tools</div>
-
-      <!-- Main Section -->
-      <div *ngIf="section && section == 'main'">
-        <app-events></app-events>
-        <br>
-        <app-home></app-home>
-      </div>
-
-      <!-- Zone Section -->
-      <div *ngIf="section && section == 'zone'">
-        <app-zones></app-zones>
-      </div>
-
-      <!-- Tools Section -->
-      <div *ngIf="section && section == 'tools'">
-        <br />
-        <br />
-        <div class="btn" (click)="getToken()">Get token</div>
-        <div class="btn btn-danger pull-right" (click)="testNotification()">Test <i class="icon-alert"></i></div>
-        <label *ngIf="token">
-          <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
-        </label>
-      </div>
-
-      <!-- Stats Section -->
-      <div *ngIf="section && section == 'stats'">
-        <app-stats></app-stats>
-      </div>
+      <app-nav-bar></app-nav-bar>
+      <router-outlet></router-outlet>
     </div>
 
     <ng-template #showWelcome>
