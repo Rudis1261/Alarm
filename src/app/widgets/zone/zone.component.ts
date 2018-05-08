@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, OnInit, Input, Output,
+  OnChanges, EventEmitter, trigger,
+  state, style, animate, transition
+} from '@angular/core';
 
 @Component({
   selector: 'app-zone',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZoneComponent implements OnInit {
 
-  constructor() { }
+  @Input() id = false;
+  @Input() name = '';
+  @Input() description = '';
+  public submitting = false;
 
-  ngOnInit() {
+  constructor() {}
+
+  onSubmit(form) {
+    if (this.submitting) return false;
+    this.submitting = true;
+
+    setTimeout(() => {
+      this.submitting = false;
+    }, 1000);
   }
 
+  ngOnInit() {}
 }

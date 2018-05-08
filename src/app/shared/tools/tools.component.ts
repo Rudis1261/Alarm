@@ -11,6 +11,7 @@ import { ApiService } from '../../services/api.service';
 export class ToolsComponent implements OnInit {
   user: any;
   token: any;
+  public sending_notification = false;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -29,10 +30,15 @@ export class ToolsComponent implements OnInit {
   }
 
   testNotification() {
+    if (this.sending_notification) return false;
+    this.sending_notification = true;
+
     this.api.get('notification', 'type=alarm&device=rudi-iphone&title=Test message&message=This is a test notification&notification=true').subscribe(data => {
       console.log("resp", data);
+      this.sending_notification = false;
       alert("Notification sent");
     }, err => {
+      this.sending_notification = false;
       console.error(err);
       alert(err.status + ": " + err.statusText);
     })

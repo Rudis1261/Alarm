@@ -1,3 +1,20 @@
-<p>
-  zone works!
-</p>
+<form (ngSubmit)="onSubmit(zoneDetailsForm)" #zoneDetailsForm="ngForm">
+  <div class="zone">
+    <label for="name">
+      Zone name
+      <input type="text" name="name" [(ngModel)]="name" #name_error="ngModel" placeholder="Zone 1" required />
+      <div [hidden]="(name_error.valid || !name_error.touched)" class="error">Invalid</div>
+    </label>
+    <label for="description">
+      Zone description
+      <input type="text" name="description" [(ngModel)]="description" #description_error="ngModel" placeholder="Front door" required />
+      <div [hidden]="(description_error.valid || !description_error.touched)" class="error">Invalid</div>
+    </label>
+
+    <input type="hidden" name="id" [(ngModel)]="id" />
+    <button type="submit" class="btn" [disabled]="zoneDetailsForm.invalid">
+      <span *ngIf="!submitting">Save</span>
+      <span *ngIf="submitting"><i class="icon-spin icon-loading"></i></span>
+    </button>
+  </div>
+</form>

@@ -48,5 +48,6 @@
     [disabled]="loggingIn"
     (click)="onSubmit(loginDetailsForm)"
     [disabled]="loginDetailsForm.invalid"
-  >{{action}}&nbsp;<i class='icon-spinner spin' *ngIf="loggingIn"></i></button>
+    class="btn"
+  >{{action}}&nbsp;<i class='icon-loading spin' *ngIf="loggingIn"></i></button>
 </form>

@@ -6,7 +6,12 @@ declare var window: any;
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styles: [`
+      button {
+        margin: 0 0 25px 10px!important;
+      }
+  `]
 })
 export class LoginComponent implements OnInit {
   @Output() onCloseModal = new EventEmitter<boolean>();

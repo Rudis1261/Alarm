@@ -16,6 +16,7 @@
 
   <div class="container">
     <div *ngIf="afAuth.authState | async as user; else showWelcome">
+      <app-events></app-events>
       <app-nav-bar></app-nav-bar>
       <router-outlet></router-outlet>
     </div>

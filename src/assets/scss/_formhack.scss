@@ -33,10 +33,10 @@ $fh-fieldset-bare: false !default;
 $fh-button-height: 40px !default;
 $fh-button-width: 100% !default;
 $fh-button-max-width: 200px !default;
-$fh-button-font-color: #fff !default;
-$fh-button-bg-color: $blue !default;
-$fh-button-hover-bg-color: darken($blue, 8%) !default;
-$fh-button-hover-font-color: #fff !default;
+$fh-button-font-color: #000 !default;
+$fh-button-bg-color: #fff !default;
+$fh-button-hover-bg-color: #f1f1f1 !default;
+$fh-button-hover-font-color: #000 !default;
 
 // Layout
 $fh-centered: false !default;

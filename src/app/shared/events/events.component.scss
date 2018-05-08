@@ -1,22 +1,23 @@
 @import "../../../assets/scss/settings";
 @import "../../../assets/scss/mixins";
 
-
 :host {
   .inner {
-    padding: 20px 10px 10px;
-    background: darken(#fff, 3%);
-    margin: 10px -20px;
-    border-top: 1px solid darken(#fff, 15%);
-    border-bottom: 1px solid darken(#fff, 15%);
+    position: relative;
+    float: right;
+    top: 0;
+    right: 0;
 
     > h4 {
-      padding-left: 18px;
-      margin-bottom: 15px;
-
       .icon-alert {
         position: relative;
         top: 3px;
+        font-size: 16px;
+      }
+    }
+
+    &.open > h4 {
+      .icon-alert {
         color: $error;
       }
     }
@@ -28,7 +29,10 @@
     }
 
     .events {
-      margin-bottom: 15px;
+      position: absolute;
+      top: 38px;
+      min-width: 320px;
+      right: 2px;
       border: 1px solid #ddd;
       box-shadow: 1px 1px 8px rgba(#ccc, 0.3);
       @include flex-wrap(wrap);
@@ -40,10 +44,15 @@
         border-bottom: 1px solid #ccc;
         padding-right: 100px;
         position: relative;
+        @include flex-wrap(wrap);
         @include flex(0 0 100%);
         @include flex-display();
         @include align-items(center);
-        @include align-content(center);
+
+        div {
+          display: block;
+          width: 100%;
+        }
 
         .btn {
           position: absolute;
@@ -61,6 +70,16 @@
         &:last-of-type {
           border-bottom: none;
         }
+      }
+    }
+  }
+}
+
+@include desktop {
+  :host {
+    .inner {
+      .events {
+        min-width: 540px;
       }
     }
   }

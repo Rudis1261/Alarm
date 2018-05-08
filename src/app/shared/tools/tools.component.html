@@ -1,5 +1,8 @@
 <div class="btn" (click)="getToken()">Get token</div>
-<div class="btn btn-danger pull-right" (click)="testNotification()">Test <i class="icon-alert"></i></div>
+<div class="btn btn-danger pull-right" (click)="testNotification()">
+  <span *ngIf="!sending_notification">Test <i class="icon-alert"></i></span>
+  <span *ngIf="sending_notification"><i class="icon-spin icon-loading"></i></span>
+</div>
 <label *ngIf="token">
   <textarea row="5" type="text" [(innerHtml)]="token" (click)="select($event)"></textarea>
 </label>

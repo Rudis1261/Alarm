@@ -14,6 +14,7 @@ export class EventsComponent implements OnInit {
   event_length: any = 0;
   events: any;
   event_keys: Array<String>;
+  show_alerts: Boolean = false;
 
   constructor(public db: AngularFireDatabase) {
     this.events_sub = db.object('events').valueChanges().subscribe(events => {
@@ -21,11 +22,13 @@ export class EventsComponent implements OnInit {
         this.events = {};
         this.event_length = 0;
         this.event_keys = [];
+        this.show_alerts = false;
         return false;
       }
+
       this.events = events;
       this.event_length = Object.keys(events).length;
-      this.event_keys = Object.keys(events);
+      this.event_keys = Object.keys(events).reverse();
     });
   }
 

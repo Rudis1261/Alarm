@@ -1,8 +1,13 @@
-<div class="inner" *ngIf="event_length > 0">
-  <h4>Events <i class="icon-alert"></i></h4>
-  <div class="events">
+<div class="inner" *ngIf="event_length > 0" [ngClass]="{'open': show_alerts == true}">
+  <h4 class="btn" (click)="show_alerts = !show_alerts" [ngClass]="{'btn-danger': !show_alerts}">
+    <i class="icon-alert"></i>
+    {{event_length}}
+    <i [ngClass]="{'icon-triangle-down': !show_alerts, 'icon-triangle-up': show_alerts}"></i>
+  </h4>
+  <div class="events" *ngIf="show_alerts">
     <div class="clearfix event" *ngFor="let index of event_keys">
-      <b>{{events[index].title}}</b> - <small><i>{{events[index].message}}</i></small>
+      <div><b>{{events[index].title}}</b></div>
+      <div><small><b>{{events[index].timestamp * 1000 | date:'dd MMM yyyy, HH:mm'}}:</b> <i>{{events[index].message}}</i></small></div>
       <span (click)="delete(index)" class="btn btn-sm"><i class="icon-trash"></i></span>
     </div>
   </div>
