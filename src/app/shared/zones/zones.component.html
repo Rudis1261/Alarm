@@ -1,1 +1,34 @@
-<app-zone></app-zone>
+<div class="zones">
+    <h4>Zones</h4>
+    <div class="boxes" *ngIf="!editing">
+        <div class="box" *ngFor="let index of zone_keys">
+            <span class="number" (click)="add_or_edit(zones[index])">{{zones[index].number}}</span>
+            <span class="name" (click)="add_or_edit(zones[index])">{{zones[index].name | limitTo:12}}</span>
+    
+            <div class="toggle">
+                <app-toggle
+                [isEnabled]="zones[index].enabled"
+                (onToggle)="toggle(zones[index])"
+                >
+                </app-toggle>      
+            </div>
+        </div>
+    
+        <div class="box" *ngIf="zone_keys && zone_keys.length < max_zones" (click)="add_or_edit(false)">
+            <div class="add" title="Add zone">
+                <i class="icon-plus-square"></i>
+            </div>
+        </div>
+    </div>
+    
+    <app-zone
+        *ngIf="editing" 
+        [number]="active_zone.number" 
+        [enabled]="active_zone.enabled" 
+        [name]="active_zone.name" 
+        [description]="active_zone.description"
+        (onSave)="on_save($event)"
+        (onDelete)="on_delete($event)"
+        (onClose)="on_close($event)"
+    ></app-zone>
+</div>

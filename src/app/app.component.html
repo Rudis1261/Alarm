@@ -1,5 +1,7 @@
 <div id="main">
-  <i class="logo icon-vpn_key pull-left"></i>
+  <a routerLink="/home">
+    <i class="logo icon-vpn_key pull-left"></i>
+  </a>
   <div class="user-details pull-right">
     <div *ngIf="afAuth.authState | async as user; else showLogin">
       <div class="profile">

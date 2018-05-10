@@ -22,6 +22,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 // Env
 import { environment } from '../environments/environment';
 
+// Pipes
+import { LimitToPipe } from './pipes/limit-to.pipe';
+
 // Services
 import { ApiService } from './services/api.service';
 import { AuthGuardService } from './services/authguard.service';
@@ -55,7 +58,8 @@ import { ToolsComponent } from './shared/tools/tools.component';
     Error404Component,
     ScheduleComponent,
     NavBarComponent,
-    ToolsComponent
+    ToolsComponent,
+    LimitToPipe
   ],
   imports: [
     BrowserModule,

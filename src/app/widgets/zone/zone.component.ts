@@ -11,20 +11,46 @@ import {
 })
 export class ZoneComponent implements OnInit {
 
-  @Input() id = false;
+  @Input() number = false;
   @Input() name = '';
   @Input() description = '';
+  @Input() enabled = false;
+  @Output() onSave: EventEmitter<Object> = new EventEmitter<Object>();
+  @Output() onDelete: EventEmitter<Object> = new EventEmitter<Object>();
+  @Output() onClose: EventEmitter<Boolean> = new EventEmitter<Boolean>();
   public submitting = false;
 
   constructor() {}
 
   onSubmit(form) {
-    if (this.submitting) return false;
+    if (this.submitting || form.invalid) return false;
     this.submitting = true;
-
+    this.onSave.emit(this.zone());
     setTimeout(() => {
       this.submitting = false;
     }, 1000);
+  }
+
+  delete(form) {
+    if (form.invalid) return false;
+    this.onDelete.emit(this.zone());
+  }
+
+  close() {
+    this.onClose.emit(true);
+  }
+
+  zone() {
+    return {
+      name: this.name,
+      description: this.description,
+      enabled: this.enabled,
+      number: this.number
+    }
+  }
+
+  toggle(event) {
+    this.enabled = !this.enabled;
   }
 
   ngOnInit() {}

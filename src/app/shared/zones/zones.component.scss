@@ -1,0 +1,79 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/settings";
+
+:host {
+  .boxes {
+    @include flex-display();
+    @include flex-wrap(wrap);
+  }
+
+  .box {
+    min-width: 100px;
+    min-height: 95px;
+    background: #fff;
+    margin: 0 15px 15px 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 1px #ddd, 1px 1px 8px rgba(#ccc, 0.2);
+    @include flex(0 0 auto);
+
+    .number {
+      background: $bad;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 12px;
+      min-width: 20px;
+      min-height: 20px;
+      line-height: 20px;
+      text-align: center;
+      position: relative;
+      top: -5px;
+      left: -5px;
+      float: left;    
+      font-weight: bold;
+      margin-bottom: -6px;
+    }
+
+    .name {
+      color: #555;
+      display: inline-block;
+      width: 100%;
+      font-weight: bold;
+      text-align: center;
+      padding: 0 5px;
+      font-size: 10px;
+    }
+
+    .toggle {
+      text-align: center;
+      margin: 10px auto 0;
+    }
+
+    .add {
+      width: 100%;
+      height: 100%;
+      font-size: 50px;
+      color: #ccc;
+      text-align: center;
+      line-height: 80px;
+      padding-top: 10px;
+      @include transition(all 300ms);
+
+      &:hover {
+        cursor: pointer;
+        color: darken(#ccc, 10%);
+      }
+    }
+  }
+
+  .zones {
+    padding: 20px 30px 10px;
+    background: #f7f7f7;
+    margin: 10px -20px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+
+    h4 {
+      margin-bottom: 10px;
+    }
+  }
+}

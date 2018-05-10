@@ -5,8 +5,8 @@ declare var moment: any;
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  template: `<p>Welcome home</p>`,
+  styles: [``]
 })
 export class HomeComponent implements OnInit {
   ngOnInit() {}

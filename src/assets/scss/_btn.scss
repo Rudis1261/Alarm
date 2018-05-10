@@ -50,7 +50,18 @@ $btnDisabledBorderColor: rgba($btnDisabledBackground,0.2);
   &:active,
   &.active {
     background: darken($btnBackground, 1%);
-  	border-color: $badass;
+    border-color: $badass;
+    box-shadow: 0 0 1px yellow, 0 0 5px rgba(darken($badass, 20%), 0.3);  
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
+	background:#fefefe;
+	border: #eee;
+	color: #ccc;
+	cursor: not-allowed;
+	box-shadow: none;
   }
 
   &:hover {
