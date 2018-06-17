@@ -15,7 +15,7 @@ export class ScheduleComponent implements OnInit {
   schedule_keys: Array<String>;
 
   constructor(public db: AngularFireDatabase) {
-    this.schedule_sub = db.object('schedule').valueChanges().subscribe(schedule => {
+    this.schedule_sub = db.object('/configuration/schedule').valueChanges().subscribe(schedule => {
       this.schedule = schedule;
       this.schedule_keys = Object.keys(schedule);
     });
@@ -23,7 +23,7 @@ export class ScheduleComponent implements OnInit {
 
   toggle(event) {
     if (!event) return false;
-    let reference = ['schedule', event.index].join('/');
+    let reference = ['/configuration/schedule', event.index].join('/');
     this.db.object(reference).set(event.state);
   }
 
