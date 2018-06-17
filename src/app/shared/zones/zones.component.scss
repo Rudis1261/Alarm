@@ -16,6 +16,16 @@
     box-shadow: 0 0 1px #ddd, 1px 1px 8px rgba(#ccc, 0.2);
     @include flex(0 0 auto);
 
+    &.closed {
+      border: 1px solid $bad;
+      box-shadow: 1px 1px 8px $bad;
+    }
+
+    &.open {
+      border: 1px solid #c12f2f;
+      box-shadow: 1px 1px 8px #c12f2f;
+    }
+
     .number {
       background: $bad;
       color: #fff;
@@ -28,7 +38,7 @@
       position: relative;
       top: -5px;
       left: -5px;
-      float: left;    
+      float: left;
       font-weight: bold;
       margin-bottom: -6px;
     }
@@ -41,6 +51,7 @@
       text-align: center;
       padding: 0 5px;
       font-size: 10px;
+      cursor: pointer;
     }
 
     .toggle {

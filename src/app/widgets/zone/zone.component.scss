@@ -13,7 +13,7 @@
       color: #ccc;
       cursor: pointer;
       @include transition(all 300ms);
-  
+
       &:hover {
         color: darken(#ccc, 20%);
       }
@@ -26,11 +26,11 @@
           margin-left: 10px;
         }
       }
-  
+
       button {
         margin-bottom: 20px!important;
       }
-  
+
       button[disabled] {
         background: #eee!important;
         border-color: #ccc!important;

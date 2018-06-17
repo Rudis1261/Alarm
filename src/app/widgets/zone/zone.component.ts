@@ -15,6 +15,7 @@ export class ZoneComponent implements OnInit {
   @Input() name = '';
   @Input() description = '';
   @Input() enabled = false;
+  @Input() state = 'open';
   @Output() onSave: EventEmitter<Object> = new EventEmitter<Object>();
   @Output() onDelete: EventEmitter<Object> = new EventEmitter<Object>();
   @Output() onClose: EventEmitter<Boolean> = new EventEmitter<Boolean>();
@@ -45,7 +46,8 @@ export class ZoneComponent implements OnInit {
       name: this.name,
       description: this.description,
       enabled: this.enabled,
-      number: this.number
+      number: this.number,
+      state: this.state
     }
   }
 

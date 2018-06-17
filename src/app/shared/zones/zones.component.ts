@@ -21,7 +21,8 @@ export class ZonesComponent implements OnInit {
     number: 0,
     enabled: false,
     name: '',
-    description: ''
+    description: '',
+    state: 'open'
   };
 
   constructor(public db: AngularFireDatabase) {
@@ -59,7 +60,7 @@ export class ZonesComponent implements OnInit {
       this.active_zone.number = this.zones ? (_.maxBy(this.zones, 'number')['number'] + 1) : 1;
     } else {
       this.active_zone = zone;
-    } 
+    }
   }
 
   on_save(zone) {
@@ -71,9 +72,9 @@ export class ZonesComponent implements OnInit {
 
   on_delete(zone) {
     if (!zone) return false;
-    console.log("DELETING ZONE", zone);    
+    console.log("DELETING ZONE", zone);
     this.delete(zone);
-    this.editing = false;    
+    this.editing = false;
   }
 
   on_close() {
